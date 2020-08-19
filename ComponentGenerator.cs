@@ -175,7 +175,7 @@ namespace {0}
                         }
                         if (property.Name == "Item")
                         {
-                            returns.Add(GenerateItem(propertyType, property));
+                            //returns.Add(GenerateItem(propertyType, property));
                         }
                         else
                         {

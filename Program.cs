@@ -45,7 +45,8 @@ namespace LivingThing.XamarinRazor
                 {
                     outputPath = Directory.GetCurrentDirectory() + "/XamarinRazor"; //@"E:\Apps\LivingThing\Libraries\LivingThing.Frameworks\LivingThing.Core.Frameworks.Xamarin.Razor\Forms";
                 }
-                outputPath = @"E:\Apps\LivingThing\Libraries\LivingThing.Frameworks\LivingThing.Core.Frameworks.XamarinRazor\Forms";
+                //outputPath = @"E:\Apps\LivingThing\Libraries\LivingThing.Frameworks\LivingThing.Core.Frameworks.XamarinRazor\Forms";
+               // outputPath = @"E:\Apps\LivingThing\Libraries\LivingThing.Frameworks\LivingThing.Core.Frameworks.XamarinApp\Components";
                 string extraAssemblies = null;
                 commands.TryGetValue("--assemblies", out extraAssemblies);
                 List<Assembly> assemblies = new List<Assembly>();
@@ -62,6 +63,7 @@ namespace LivingThing.XamarinRazor
                     assemblies.Add(typeof(Button).Assembly);
                     //assemblies.Add(typeof(ColorPicker.AlphaSlider).Assembly);
                     //assemblies.Add(typeof(SkiaSharp.Views.Forms.SKCanvasView).Assembly);
+                    //assemblies.Add(typeof(Xamarin.Forms.PancakeView.PancakeView).Assembly);
                 }
                 var componentGenerators = assemblies.SelectMany(a => 
                         a.ExportedTypes.Where(t => !t.IsAbstract && t.IsPublic && typeof(Element).IsAssignableFrom(t) && t.GetConstructor(new Type[] { }) != null)
